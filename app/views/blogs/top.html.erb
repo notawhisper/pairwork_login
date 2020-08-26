@@ -9,9 +9,16 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                      <% if logged_in? %>
+                        <li class="nav-item"><%= link_to "Profile", user_path(current_user.id) %></li>
+                        <li class="nav-item"><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
+                      <% else %>
+                        <li class="nav-item"><%= link_to "Sign up", new_user_path %></li>
+                        <li class="nav-item"><%= link_to "Login", new_session_path %></li>
+                      <% end %>
+                        <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contact</a></li> -->
                     </ul>
                 </div>
             </div>

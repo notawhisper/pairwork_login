@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :access_controll_for_blog, except: :top
 
   # GET /blogs
   # GET /blogs.json
@@ -22,7 +23,7 @@ class BlogsController < ApplicationController
   end
 
   def top
-    @blogs = Blog.all    
+    # @blogs = Blog.all
   end
 
   # POST /blogs
