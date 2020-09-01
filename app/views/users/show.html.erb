@@ -2,6 +2,9 @@
 <h1><%= @user.name %>のページ</h1>
 <p>メールアドレス: <%= @user.email %></p>
 
+<h1>自分がお気に入りした回数：<%= @favorite_total_counts %></h1>
+<h1>自分がお気に入りされた回数：<%= @favorited_total_counts %></h1>
+
 <% @favorites.each do |favorite| %>
   <p>タイトル</p>
   <%= favorite.title %>
