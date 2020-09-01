@@ -1,3 +1,10 @@
 <%= render 'layouts/header' %>
 <h1><%= @user.name %>のページ</h1>
 <p>メールアドレス: <%= @user.email %></p>
+
+<% @favorites.each do |favorite| %>
+  <p>タイトル</p>
+  <%= favorite.title %>
+  <p>本文</p>
+  <%= favorite.content %>
+<% end %>
