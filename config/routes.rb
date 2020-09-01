@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :favorites, only: [:index, :create, :destroy]
   resources :sessions
   resources :blogs do
     member do
